@@ -1,0 +1,22 @@
+{
+  "speakers": [
+    {
+      "name": "Burt Bear",
+      "profilePic": "assets/img/speakers/bear.jpg",
+      "twitter": "ionicframework",
+      "about": "Burt is a Bear.",
+      "location": "Everywhere",
+      "email": "burt@example.com",
+      "phone": "+1-541-754-3010"
+    },
+    {
+      "name": "Burt Tiger",
+      "profilePic": "assets/img/speakers/bear.jpg",
+      "twitter": "ionicframework",
+      "about": "Burt is a Bear.",
+      "location": "Everywhere",
+      "email": "burt@example.com",
+      "phone": "+1-541-754-3010"
+    }
+  ]
+}
