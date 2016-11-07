@@ -1,0 +1,18 @@
+# IDE
+.vscode
+.idea
+
+# Dependencies
+node_modules
+
+# Logs
+npm_debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
