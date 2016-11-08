@@ -12,12 +12,16 @@ module.exports = function (app, passport) {
     .post('/', map.create);
   app.use('/api/map', mapRouter);
 
+  const authRouter = express.Router();
+  authRouter
+    .post('/register', users.register)
+    .post('/login', users.login);
+  app.use('/api/auth', authRouter);
+
   const userRouter = express.Router();  
   userRouter
     .param('userId', users.load)
     .get('/', auth.requiresLogin, users.list)
     .get('/:userId', users.list)
-    .post('/register', users.register)
-    .post('/login', users.login);
   app.use('/api/user', userRouter);
 }

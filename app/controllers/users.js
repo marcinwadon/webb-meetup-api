@@ -5,13 +5,16 @@ const jwt = require('jsonwebtoken');
 const User = mongoose.model('User');
 
 exports.load = async(function* (req, res, next, _id) {
+  if (!mongoose.Types.ObjectId.isValid(_id)) {
+      return res.status(404).json({ error: 'User not found.' });
+  }
   const criteria = { _id };
   
-  try {
+  try {    
     req.profile = yield User.load({ criteria });
 
     if (!req.profile) {
-      return next(new Error('User not found'));
+      return res.status(404).json({ error: 'User not found.' });
     }
   } catch (err) {
     return next(err);
@@ -39,7 +42,15 @@ exports.register = async(function* (req, res) {
   try {
     yield user.save();
 
-    res.json({ id: user._id });
+    const token = jwt.sign(user, req.app.get('jwtsecret'), { 
+      expiresIn: 60*60*24
+    });
+
+    res.json({
+      userId: user._id,
+      token: token
+    });
+
   } catch (err) {
     const errors = Object.keys(err.errors)
       .map(field => err.errors[field].message);
@@ -50,30 +61,30 @@ exports.register = async(function* (req, res) {
 
 exports.login = async(function* (req, res) {
   const options = {
-      criteria: { email: req.body.email },
-      select: 'name email presentation hashed_password salt'
-    };
+    criteria: { email: req.body.email },
+    select: 'name email presentation hashed_password salt'
+  };
 
-    User.load(options, function (err, user) {
-      if (err) {
-        return res.status(400).json({ error: 'Invalid email or password' });
-      }
+  User.load(options, function (err, user) {
+    if (err) {
+      return res.status(400).json({ error: 'Invalid email or password' });
+    }
 
-      if (!user) {
-        return res.status(400).json({ error: 'Invalid email or password' });
-      }
+    if (!user) {
+      return res.status(400).json({ error: 'Invalid email or password' });
+    }
 
-      if (!user.authenticate(req.body.password)) {
-        return res.status(400).json({ error: 'Invalid email or password' });
-      }
+    if (!user.authenticate(req.body.password)) {
+      return res.status(400).json({ error: 'Invalid email or password' });
+    }
 
-      const token = jwt.sign(user, req.app.get('jwtsecret'), { 
-        expiresIn: 60*60*24
-      });
-
-      res.json({
-        success: true,
-        token: token
-      });
+    const token = jwt.sign(user, req.app.get('jwtsecret'), { 
+      expiresIn: 60*60*24
     });
+
+    res.json({
+      userId: user._id,
+      token: token
+    });
+  });
 });
