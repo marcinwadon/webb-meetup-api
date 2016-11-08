@@ -8,6 +8,7 @@ exports.load = async(function* (req, res, next, _id) {
   if (!mongoose.Types.ObjectId.isValid(_id)) {
       return res.status(404).json({ error: 'User not found.' });
   }
+  
   const criteria = { _id };
   
   try {    
