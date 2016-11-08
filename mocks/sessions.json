@@ -1,0 +1,12 @@
+{
+  "sessions": [
+    {
+      "name": "Breakfast",
+      "description": "Description",
+      "location": "L120",
+      "timeStart": "9:00 am",
+      "timeEnd": "9:30 am",
+      "speakerNames": ["Burt Bear", "Charlie Cheetah"]
+    }
+  ]
+}
