@@ -22,7 +22,7 @@ exports.requiresLogin = (req, res, next) => {
 
         return next();
       });
-    })
+    });
   } else {
     return res.status(403).json({ error: 'No token provided.' });
   }
