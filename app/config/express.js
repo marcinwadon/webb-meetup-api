@@ -9,10 +9,3 @@ module.exports = function (app, passport) {
 
   app.set('jwtsecret', '78yvn4s87ty4byvs87by83bvk37b8y4tsv');
 }
-
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-
-//   next();
-// });

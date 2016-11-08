@@ -27,7 +27,6 @@ connect()
 
 function listen() {
   const server = http.Server(app);
-  // const io = require('socket.io')(server);
 
   server.listen(PORT);
   DEBUG && console.log('Server listening on port ' + PORT);
@@ -39,24 +38,3 @@ function connect() {
   mongoose.Promise = global.Promise;
   return mongoose.connect('mongodb://mongo:27017', options).connection;
 }
-
-/*
-// IO
-
-io.sockets.on(
-  'connection',
-  (socket) => {
-    const socketId = socket.id;
-    DEBUG && console.log('Socket connected.', socketId);
-
-    // REAL-TIME IO HERE
-
-    socket.on(
-      'disconnect',
-      () => {
-        DEBUG && console.log('Socket disconnected.', socketId);
-      }
-    );
-  }
-)
-*/
