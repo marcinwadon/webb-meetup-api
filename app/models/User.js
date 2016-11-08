@@ -9,7 +9,8 @@ const UserSchema = new Schema({
   presentation: { type: Boolean, default: false },
   hashed_password: { type: String, default: '' },
   salt: { type: String, default: '' },
-  access_token: { type: String, default: '' }
+  access_token: { type: String, default: '' },
+  role: { type: String, default: 'ROLE_USER' }
 });
 
 UserSchema.set('toJSON', {
@@ -99,7 +100,7 @@ UserSchema.methods = {
 
 UserSchema.statics = {
   load: function (options, cb) {
-    options.select = options.select || 'name email presentation';
+    options.select = options.select || 'name role email presentation';
     return this.findOne(options.criteria)
       .select(options.select)
       .exec(cb);

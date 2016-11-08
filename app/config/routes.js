@@ -21,7 +21,7 @@ module.exports = function (app, passport) {
   const userRouter = express.Router();  
   userRouter
     .param('userId', users.load)
-    .get('/', auth.requiresLogin, users.list)
-    .get('/:userId', users.list)
+    .get('/', auth.requiresLogin, auth.requiresRole(['ROLE_USER']), users.list)
+    .get('/:userId', auth.requiresLogin, auth.requiresRole(['ROLE_USER']), users.list)
   app.use('/api/user', userRouter);
 }
