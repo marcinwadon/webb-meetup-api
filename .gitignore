@@ -16,3 +16,7 @@ pids
 
 # Optional npm cache directory
 .npm
+
+# Mongo data
+data/*
+!data/.gitkeep
