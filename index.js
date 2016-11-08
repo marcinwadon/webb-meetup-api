@@ -3,54 +3,44 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const mongoose = require('mongoose');
+const join = require('path').join;
 
-mongoose.connect('mongodb://mongo:27017');
-
-// CONSTANTS
 const PORT = process.env.PORT || 80;
 const DEBUG = process.env.DEBUG || false;
 
-// APP INIT
+const models = join(__dirname, 'app/models');
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+module.exports = app;
 
-  next();
-});
+fs.readdirSync(models)
+  .filter(file => ~file.search(/^[^\.].*\.js$/))
+  .forEach(file => require(join(models, file)));
 
-// ROUTER
-const router = express.Router();
+require('./app/config/express')(app);
+require('./app/config/routes')(app);
 
-router.get('/', (req, res) => {
-  res.json({message: 'hooray!' });
-});
+connect()
+  .on('error', console.log)
+  .on('disconnected', connect)
+  .once('open', listen);
 
-router.get('/schedule', (req, res) => {
-  res.json(JSON.parse(fs.readFileSync('mocks/schedule.json', 'utf-8')));
-});
+function listen() {
+  const server = http.Server(app);
+  // const io = require('socket.io')(server);
 
-router.get('/map', (req, res) => {
-  res.json(JSON.parse(fs.readFileSync('mocks/map.json', 'utf-8')));
-});
+  server.listen(PORT);
+  DEBUG && console.log('Server listening on port ' + PORT);
+}
 
-router.get('/speakers', (req, res) => {
-  res.json(JSON.parse(fs.readFileSync('mocks/speakers.json', 'utf-8')));
-});
+function connect() {
+  const options = { server: { socketOptions: { keepAlive: 1 } } };
 
-app.use('/api', router);
+  mongoose.Promise = global.Promise;
+  return mongoose.connect('mongodb://mongo:27017', options).connection;
+}
 
-// IO SERVER
-
-const server = http.Server(app);
-const io = require('socket.io')(server);
-
-server.listen(PORT);
-DEBUG && console.log('Server listening on port ' + PORT);
-
+/*
 // IO
 
 io.sockets.on(
@@ -69,3 +59,4 @@ io.sockets.on(
     );
   }
 )
+*/
