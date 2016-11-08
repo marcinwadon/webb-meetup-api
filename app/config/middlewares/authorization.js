@@ -3,8 +3,7 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
-exports.requiresLogin = (req, res, next) => {
-  
+exports.requiresLogin = (req, res, next) => {  
   const authorizationHeader = req.headers['authorization'] || '';
   const token = (authorizationHeader.indexOf('Bearer ') > -1) ? authorizationHeader.split(' ')[1] : '';
 
@@ -27,5 +26,4 @@ exports.requiresLogin = (req, res, next) => {
   } else {
     return res.status(403).json({ error: 'No token provided.' });
   }
-  
 }
