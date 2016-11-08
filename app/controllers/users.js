@@ -31,7 +31,7 @@ exports.list = async(function* (req, res) {
 
   const users = yield User
     .find()
-    .select('name email presentation')
+    .select('name role email presentation')
     .exec();
 
   res.json({ users });
@@ -39,6 +39,7 @@ exports.list = async(function* (req, res) {
 
 exports.register = async(function* (req, res) {
   const user = new User(req.body);
+  user.role = 'ROLE_USER';
 
   try {
     yield user.save();
@@ -62,7 +63,7 @@ exports.register = async(function* (req, res) {
 exports.login = async(function* (req, res) {
   const options = {
     criteria: { email: req.body.email },
-    select: 'name email presentation hashed_password salt'
+    select: 'name email role presentation hashed_password salt'
   };
 
   User.load(options, function (err, user) {

@@ -18,7 +18,7 @@ exports.requiresLogin = (req, res, next) => {
           return res.status(403).json({ error: 'User not exists.' });
         }
 
-        req.user = user;
+        req.user = user[0];
 
         return next();
       });
@@ -27,3 +27,11 @@ exports.requiresLogin = (req, res, next) => {
     return res.status(403).json({ error: 'No token provided.' });
   }
 }
+
+exports.requiresRole = (role) => (req, res, next) => {
+  if (req.user && role.indexOf(req.user.role) > -1) {
+    return next();
+  }
+
+  return res.status(403).json({});
+};
