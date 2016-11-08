@@ -3,7 +3,8 @@
 ---
 
 ### Start:
-- `./run.sh`
+- `./run.sh api`
+- `./run.sh -d api` - detached
 
 ### Logs:
 - `docker-compose logs -f <container_name>` eg. `docker-compose logs -f api`
