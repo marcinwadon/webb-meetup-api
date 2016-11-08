@@ -3,7 +3,6 @@ version: '2'
 services:
   api:
     image: node:6.9.1
-    user: "${UID}"
     command: ['bash', 'start.sh']
     working_dir: /usr/src/app
     volumes: 
@@ -13,6 +12,7 @@ services:
     ports:
       - 4546:80
     environment:
+      - USER_ID=${UID}
       - PORT=80
       - DEBUG=true
 

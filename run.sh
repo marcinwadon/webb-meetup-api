@@ -1,3 +1,3 @@
 #!/bin/bash
 
-export UID && docker-compose up -d $1
+export UID && docker-compose up $1
