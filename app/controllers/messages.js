@@ -71,7 +71,9 @@ exports.create = async(function* (req, res) {
 });
 
 exports.add = async(function* (req, res) {
-  if (!userIsOwner(req.user, req.thread) && !(yield userIsSpeaker(req.user, req.thread.session))) {
+  if (!userIsOwner(req.user, req.thread) 
+    && !(yield userIsSpeaker(req.user, req.thread.session))
+  ) {
     return res.status(403).json();
   }
 

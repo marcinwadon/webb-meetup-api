@@ -45,6 +45,7 @@ exports.couldLogin = (req, res, next) => {
       if (err) {       
         req.user = new User();
         user._id = null;
+        
         return next();
       }
 
@@ -52,7 +53,8 @@ exports.couldLogin = (req, res, next) => {
         if (err) {
           req.user = new User();
           user._id = null;
-        return next();
+
+          return next();
         }
 
         req.user = user[0];
