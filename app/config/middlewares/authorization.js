@@ -13,7 +13,7 @@ exports.requiresLogin = (req, res, next) => {
         return res.status(403).json({ error: 'Invalid token.' });
       }
 
-      User.find({ _id: decoded._doc._id }, function (err, user) {
+      User.find({ _id: decoded.id }, function (err, user) {
         if (err) {
           return res.status(403).json({ error: 'User not exists.' });
         }
@@ -22,7 +22,7 @@ exports.requiresLogin = (req, res, next) => {
 
         return next();
       });
-    })
+    });
   } else {
     return res.status(403).json({ error: 'No token provided.' });
   }
