@@ -98,6 +98,10 @@ exports.login = async(function* (req, res) {
 });
 
 exports.changePassword = async(function* (req, res) {
+  if (!req.user.authenticate(req.body.oldPassword)) {
+    return res.status(400).json({ error: 'Bad password' });
+  }
+
   req.user.password = req.body.password;
   
   try {
