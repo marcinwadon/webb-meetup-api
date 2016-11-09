@@ -9,6 +9,8 @@ while true; do
   esac
 done
 
+docker-compose exec -T mongo mongo --eval "db.dropDatabase()"
+
 docker-compose exec -T mongo mongo --eval "db.mappoints.drop()"
 
 docker-compose exec -T mongo \

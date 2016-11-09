@@ -4,6 +4,8 @@ const map = require('../controllers/map');
 const users = require('../controllers/users');
 const speakers = require('../controllers/speakers');
 const sessions = require('../controllers/sessions');
+const threads = require('../controllers/threads');
+const messages = require('../controllers/messages');
 
 const auth = require('./middlewares/authorization');
 
@@ -25,8 +27,8 @@ module.exports = function (app, passport) {
     .param('userId', users.load)
     .get('/', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), users.list)
     .get('/me', auth.requiresLogin, users.me)
+    .post('/changePassword', auth.requiresLogin, users.changePassword)
     .get('/:userId', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), users.list)
-    .post('/changePassword/:userId', auth.requiresLogin, users.changePassword)
   app.use('/api/user', userRouter);
 
   const speakerRouter = express.Router();
@@ -40,6 +42,16 @@ module.exports = function (app, passport) {
   sessionsRouter
     .param('sessionId', sessions.load)
     .get('/', sessions.list)
-    .get('/:sessionId', sessions.list);
+    .get('/:sessionId', sessions.list)
+    .get('/:sessionId/thread', auth.couldLogin, threads.list)
+    .post('/:sessionId/message', auth.requiresLogin, messages.create);
   app.use('/api/session', sessionsRouter);
+
+  const threadsRouter = express.Router();
+  threadsRouter
+    .param('threadId', threads.load)
+    .get('/:threadId', threads.list)
+    .get('/:threadId/message', messages.list)
+    .post('/:threadId/message', auth.requiresLogin, messages.add);
+  app.use('/api/thread', threadsRouter);
 }
