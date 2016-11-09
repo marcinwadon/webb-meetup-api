@@ -29,29 +29,37 @@ exports.list = async(function* (req, res) {
     return res.json({ thread: req.thread });
   }
 
-  const publicThreads = yield Thread
-    .find({ session: req.session, public: true })
+  const threads = yield Thread
+    .find()
     .select()
     .populate('question', 'text user')
-    .exec(); 
+    .exec();
 
-  let myThreads = [];
-  if (req.user) {
-    const myQuestions = yield Message
-      .find({ user: req.user })
-      .select()
-      .exec();
+  res.json({ threads });
 
-    myThreads = [...yield Thread
-      .find({
-        session: req.session,
-        question: { $in: myQuestions }
-      })
-      .select('create_date question public')
-      .populate('question', 'text user')
-      .exec()
-    ];
-  }
+  // const publicThreads = yield Thread
+  //   .find({ session: req.session, public: true })
+  //   .select()
+  //   .populate('question', 'text user')
+  //   .exec(); 
 
-    res.json({ threads: [...publicThreads, ...myThreads] });
+  // let myThreads = [];
+  // if (req.user) {
+  //   const myQuestions = yield Message
+  //     .find({ user: req.user })
+  //     .select()
+  //     .exec();
+
+  //   myThreads = [...yield Thread
+  //     .find({
+  //       session: req.session,
+  //       question: { $in: myQuestions }
+  //     })
+  //     .select('create_date question public')
+  //     .populate('question', 'text user')
+  //     .exec()
+  //   ];
+  // }
+
+  // res.json({ threads: [...publicThreads, ...myThreads] });
 });
