@@ -24,6 +24,17 @@ exports.load = async(function* (req, res, next, _id) {
   next();
 });
 
+exports.me = async(function* (req, res) {
+  res.json({ 
+    user: {
+      id: req.user.id,
+      name: req.user.name,
+      email: req.user.email,
+      role: req.user.role
+    } 
+  }); 
+});
+
 exports.list = async(function* (req, res) {
   if (req.profile) {
     return res.json({ user: req.profile });
@@ -87,16 +98,12 @@ exports.login = async(function* (req, res) {
 });
 
 exports.changePassword = async(function* (req, res) {
-  if (req.user._id.toString() !== req.profile._id.toString()) {
-    return res.status(403).json({});
-  }
-
   req.user.password = req.body.password;
   
   try {
     yield req.user.save();
   } catch (err) {
-    return res.status(500).json({});
+    return res.status(500).json({ error: err });
   }
 
   return res.status(204).json({});

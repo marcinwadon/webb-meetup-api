@@ -8,7 +8,7 @@ const SessionSchema = new Schema({
   location: String,
   timeStart: String,
   timeEnd: String,
-  speakers: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+  speakers: [{ type: Schema.Types.ObjectId, ref: 'SpeakerDetail' }]
 });
 
 SessionSchema.set('toJSON', {
