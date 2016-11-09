@@ -86,6 +86,21 @@ exports.login = async(function* (req, res) {
   });
 });
 
+exports.changePassword = async(function* (req, res) {
+  if (req.user._id.toString() !== req.profile._id.toString()) {
+    return res.status(403).json({});
+  }
+
+  req.user.password = req.body.password;
+  try {
+    yield req.user.save();
+  } catch (err) {
+    return res.status(500).json({});
+  }
+
+  return res.status(204).json({});
+});
+
 function generateToken(user, req) {
   return jwt.sign({ id: user._id.toString() }, req.app.get('jwtsecret'), { 
     expiresIn: 60*60*24

@@ -1,0 +1,4 @@
+[
+  { "_id": {"$oid":"507f1f77bcf86cd799439011"}, "user": {"$oid":"507f1f77bcf86cd799439012"}, "bio": "bio", "www": "http://google.pl", "picture": "", "social_media": [{ "key": "fb", "url": "http://fb.com" }] },
+  { "_id": {"$oid":"507f1f77bcf86cd799439012"}, "user": {"$oid":"507f1f77bcf86cd799439013"}, "bio": "bio2", "www": "http://fb.com", "picture": "", "social_media": [{ "key": "googleplus", "url": "http://google.pl" }] }
+]

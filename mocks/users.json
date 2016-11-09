@@ -1,6 +1,6 @@
 [
-  { "name": "Admin", "email": "admin@dvs.pl", "presentation": false, "role": "ROLE_ADMIN", "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180", "salt": "777375890574" },
-  { "name": "Speaker1", "email": "speaker1@dvs.pl", "presentation": false, "role": "ROLE_SPEAKER", "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180", "salt": "777375890574" },
-  { "name": "Speaker2", "email": "speaker2@dvs.pl", "presentation": false, "role": "ROLE_SPEAKER", "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180", "salt": "777375890574" },
-  { "name": "User", "email": "user@dvs.pl", "presentation": false, "role": "ROLE_USER", "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180", "salt": "777375890574" }  
+  { "_id": {"$oid":"507f1f77bcf86cd799439011"}, "name": "Admin", "email": "admin@dvs.pl", "presentation": false, "role": "ROLE_ADMIN", "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180", "salt": "777375890574" },
+  { "_id": {"$oid":"507f1f77bcf86cd799439012"}, "name": "Speaker1", "email": "speaker1@dvs.pl", "presentation": false, "role": "ROLE_SPEAKER", "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180", "salt": "777375890574" },
+  { "_id": {"$oid":"507f1f77bcf86cd799439013"}, "name": "Speaker2", "email": "speaker2@dvs.pl", "presentation": false, "role": "ROLE_SPEAKER", "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180", "salt": "777375890574" },
+  { "_id": {"$oid":"507f1f77bcf86cd799439014"}, "name": "User", "email": "user@dvs.pl", "presentation": false, "role": "ROLE_USER", "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180", "salt": "777375890574" }  
 ]

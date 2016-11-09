@@ -1,3 +1,4 @@
 [
-  { "name": "Breakfast", "description": "Description", "location": "L120", "timeStart": "9:00 am", "timeEnd": "9:30 am" }
+  { "_id": {"$oid":"507f1f77bcf86cd799439011"}, "name": "Breakfast", "description": "Description", "location": "L120", "timeStart": "9:00 am", "timeEnd": "9:30 am", "speakers": [{"$oid":"507f1f77bcf86cd799439011"},{"$oid":"507f1f77bcf86cd799439012"}] },
+  { "_id": {"$oid":"507f1f77bcf86cd799439012"}, "name": "Dinner", "description": "Description", "location": "L120", "timeStart": "10:00 am", "timeEnd": "10:30 am", "speakers": [{"$oid":"507f1f77bcf86cd799439012"}] }
 ]
