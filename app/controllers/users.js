@@ -92,6 +92,7 @@ exports.changePassword = async(function* (req, res) {
   }
 
   req.user.password = req.body.password;
+  
   try {
     yield req.user.save();
   } catch (err) {

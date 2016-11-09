@@ -21,6 +21,7 @@ SpeakerDetailSchema.set('toJSON', {
 SpeakerDetailSchema.statics = {
   load: function (options, cb) {
     options.select = options.select || 'user bio www picture social_media';
+    
     return this.findOne(options.criteria)
       .select(options.select)
       .populate('user', 'id name email')

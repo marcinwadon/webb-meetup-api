@@ -22,6 +22,7 @@ SessionSchema.set('toJSON', {
 SessionSchema.statics = {
   load: function (options, cb) {
     options.select = options.select || 'name description location timeStart timeEnd speakers';
+    
     return this.findOne(options.criteria)
       .select(options.select)
       .populate('speakers', 'id email name')
