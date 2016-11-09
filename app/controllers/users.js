@@ -24,6 +24,17 @@ exports.load = async(function* (req, res, next, _id) {
   next();
 });
 
+exports.me = async(function* (req, res) {
+  res.json({ 
+    user: {
+      id: req.user.id,
+      name: req.user.name,
+      email: req.user.email,
+      role: req.user.role
+    } 
+  }); 
+});
+
 exports.list = async(function* (req, res) {
   if (req.profile) {
     return res.json({ user: req.profile });

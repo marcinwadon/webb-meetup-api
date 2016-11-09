@@ -23,9 +23,10 @@ module.exports = function (app, passport) {
   const userRouter = express.Router();  
   userRouter
     .param('userId', users.load)
-    .get('/', auth.requiresLogin, auth.requiresRole(['ROLE_USER', 'ROLE_SPEAKER', 'ROLE_ADMIN']), users.list)
+    .get('/', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), users.list)
+    .get('/me', auth.requiresLogin, users.me)
+    .get('/:userId', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), users.list)
     .post('/changePassword/:userId', auth.requiresLogin, users.changePassword)
-    .get('/:userId', auth.requiresLogin, auth.requiresRole(['ROLE_USER', 'ROLE_SPEAKER', 'ROLE_ADMIN']), users.list)
   app.use('/api/user', userRouter);
 
   const speakerRouter = express.Router();
