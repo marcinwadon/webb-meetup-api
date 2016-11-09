@@ -9,7 +9,6 @@ const UserSchema = new Schema({
   presentation: { type: Boolean, default: false },
   hashed_password: { type: String, default: '' },
   salt: { type: String, default: '' },
-  access_token: { type: String, default: '' },
   role: { type: String, default: 'ROLE_USER' }
 });
 
