@@ -44,9 +44,7 @@ exports.register = async(function* (req, res) {
   try {
     yield user.save();
 
-    const token = jwt.sign(user, req.app.get('jwtsecret'), { 
-      expiresIn: 60*60*24
-    });
+    const token = generateToken(user, req);
 
     res.json({
       userId: user._id,
@@ -79,9 +77,7 @@ exports.login = async(function* (req, res) {
       return res.status(400).json({ error: 'Invalid email or password' });
     }
 
-    const token = jwt.sign(user, req.app.get('jwtsecret'), { 
-      expiresIn: 60*60*24
-    });
+    const token = generateToken(user, req);
 
     res.json({
       userId: user._id,
@@ -89,3 +85,9 @@ exports.login = async(function* (req, res) {
     });
   });
 });
+
+function generateToken(user, req) {
+  return jwt.sign({ id: user._id.toString() }, req.app.get('jwtsecret'), { 
+    expiresIn: 60*60*24
+  });
+}
