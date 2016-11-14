@@ -30,7 +30,7 @@ exports.list = async(function* (req, res) {
   }
 
   const threads = yield Thread
-    .find()
+    .find({ session: req.session })
     .select()
     .populate({
       path: 'question',
