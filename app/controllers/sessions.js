@@ -31,7 +31,7 @@ exports.list = async(function* (req, res) {
   const sessions = yield Session
     .find()
     .select()
-    .populate('speakers', 'id name email')
+    .populate('speakers', 'name')
     .exec();
 
     res.json({ sessions });

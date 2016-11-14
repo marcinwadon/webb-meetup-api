@@ -29,29 +29,20 @@ exports.list = async(function* (req, res) {
     return res.json({ thread: req.thread });
   }
 
-  const publicThreads = yield Thread
-    .find({ session: req.session, public: true })
+  const threads = yield Thread
+    .find()
     .select()
-    .populate('question', 'text user')
-    .exec(); 
+    .populate({
+      path: 'question',
+      model: 'Message',
+      select: 'text user',
+      populate: {
+        path: 'user',
+        model: 'User',
+        select: 'name'
+      }
+    })
+    .exec();
 
-  let myThreads = [];
-  if (req.user) {
-    const myQuestions = yield Message
-      .find({ user: req.user })
-      .select()
-      .exec();
-
-    myThreads = [...yield Thread
-      .find({
-        session: req.session,
-        question: { $in: myQuestions }
-      })
-      .select('create_date question public')
-      .populate('question', 'text user')
-      .exec()
-    ];
-  }
-
-    res.json({ threads: [...publicThreads, ...myThreads] });
+  res.json({ threads });
 });

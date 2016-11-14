@@ -33,6 +33,7 @@ exports.list = async(function* (req, res) {
   const messages = yield Message
     .find({ thread: req.thread })
     .select()
+    .populate('user', 'name')
     .exec();
 
     res.json({ messages });
@@ -83,10 +84,10 @@ exports.add = async(function* (req, res) {
   message.text = req.body.text;
 
   if (userIsSpeaker(req.user, req.thread)) {
-    thread.public = true;
+    req.thread.public = true;
 
     try {
-      yield thread.save();
+      yield req.thread.save();
     } catch (err) {
       res.status(500).json({});
     }
@@ -107,10 +108,14 @@ function userIsOwner(user, thread) {
 
 const userIsSpeaker = async(function* (user, sessionId) {
   const session = yield Session
-    .findOne({ })
+    .findOne({ _id: sessionId })
     .select('speakers')
     .populate('speakers', 'user')
-    .exec();  
+    .exec();
+
+  if (!session) {
+    return false;
+  }
 
   for (let speaker of session.speakers) {
     if (user._id.toString() === speaker.user.toString()) {

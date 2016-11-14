@@ -34,7 +34,16 @@ ThreadSchema.statics = {
     
     return this.findOne(options.criteria)
       .select(options.select)
-      .populate('question', 'text user')
+      .populate({
+        path: 'question',
+        model: 'Message',
+        select: 'text user',
+        populate: {
+          path: 'user',
+          model: 'User',
+          select: 'name'
+        }
+      })
       .exec(cb);
   }
 };
