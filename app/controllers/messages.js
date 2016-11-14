@@ -33,6 +33,7 @@ exports.list = async(function* (req, res) {
   const messages = yield Message
     .find({ thread: req.thread })
     .select()
+    .populate('user', 'name')
     .exec();
 
     res.json({ messages });

@@ -34,7 +34,7 @@ MessageSchema.statics = {
     
     return this.findOne(options.criteria)
       .select(options.select)
-      .populate('user', 'id name email')
+      .populate('user', 'name')
       .exec(cb);
   }
 };

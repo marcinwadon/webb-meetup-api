@@ -32,7 +32,16 @@ exports.list = async(function* (req, res) {
   const threads = yield Thread
     .find()
     .select()
-    .populate('question', 'text user')
+    .populate({
+      path: 'question',
+      model: 'Message',
+      select: 'text user',
+      populate: {
+        path: 'user',
+        model: 'User',
+        select: 'name'
+      }
+    })
     .exec();
 
   res.json({ threads });

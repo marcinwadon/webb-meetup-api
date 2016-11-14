@@ -37,12 +37,12 @@ exports.me = async(function* (req, res) {
 
 exports.list = async(function* (req, res) {
   if (req.profile) {
-    return res.json({ user: req.profile });
+    return res.json({ user: { name: req.profile.name } });
   }
 
   const users = yield User
     .find()
-    .select('name role email presentation')
+    .select('name')
     .exec();
 
   res.json({ users });
@@ -58,7 +58,10 @@ exports.register = async(function* (req, res) {
     const token = generateToken(user, req);
 
     res.json({
-      userId: user._id,
+      user: {
+        id: user._id,
+        role: user.role
+      },
       token: token
     });
   } catch (err) {
@@ -91,7 +94,10 @@ exports.login = async(function* (req, res) {
     const token = generateToken(user, req);
 
     res.json({
-      userId: user._id,
+      user: {
+        id: user._id,
+        role: user.role
+      },
       token: token
     });
   });
