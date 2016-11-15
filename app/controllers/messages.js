@@ -83,7 +83,7 @@ exports.add = async(function* (req, res) {
   message.thread = req.thread;
   message.text = req.body.text;
 
-  if (userIsSpeaker(req.user, req.thread)) {
+  if (yield userIsSpeaker(req.user, req.thread)) {
     req.thread.public = true;
 
     try {
@@ -118,7 +118,8 @@ const userIsSpeaker = async(function* (user, sessionId) {
   }
 
   for (let speaker of session.speakers) {
-    if (user._id.toString() === speaker.user.toString()) {
+    console.log(speaker.user._id, user._id);
+    if (user._id.toString() === speaker.user._id.toString()) {
       return true;
     }
   }

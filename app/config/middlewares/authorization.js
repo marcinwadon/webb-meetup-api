@@ -44,7 +44,7 @@ exports.couldLogin = (req, res, next) => {
     jwt.verify(token, req.app.get('jwtsecret'), function (err, decoded) {
       if (err) {       
         req.user = new User();
-        user._id = null;
+        req.user._id = '';
         
         return next();
       }
@@ -52,7 +52,7 @@ exports.couldLogin = (req, res, next) => {
       User.find({ _id: decoded.id }, function (err, user) {
         if (err) {
           req.user = new User();
-          user._id = null;
+          req.user._id = '';
 
           return next();
         }

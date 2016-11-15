@@ -49,10 +49,8 @@ module.exports = function (app, passport) {
 
   const threadsRouter = express.Router();
   threadsRouter
-    .param('threadId', threads.load)
-    .get('/:threadId', threads.list)
-    .delete('/:threadId', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), threads.delete)
-    .get('/:threadId/message', messages.list)
-    .post('/:threadId/message', auth.requiresLogin, messages.add);
+    .delete('/:threadId', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), threads.load, threads.delete)
+    .get('/:threadId/message', auth.couldLogin, threads.load, messages.list)
+    .post('/:threadId/message', auth.requiresLogin, threads.load, messages.add);
   app.use('/api/thread', threadsRouter);
 }

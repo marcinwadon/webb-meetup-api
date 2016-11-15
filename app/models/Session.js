@@ -25,7 +25,16 @@ SessionSchema.statics = {
     
     return this.findOne(options.criteria)
       .select(options.select)
-      .populate('speakers', 'id email name')
+      .populate({
+        path: 'speakers',
+        model: 'SpeakerDetail',
+        select: 'user bio www picture social_media',
+        populate: {
+          path: 'user',
+          model: 'User',
+          select: 'name email bio'
+        }
+      })
       .exec(cb);
   }
 };
