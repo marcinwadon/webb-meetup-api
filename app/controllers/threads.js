@@ -80,7 +80,11 @@ exports.list = async(function* (req, res) {
     let myThreads = [];
 
     for (let thread of unpublicThreads) {
-      if (!userIsSpeaker && req.user.role !== 'ROLE_ADMIN' && thread.question.user._id.toString() === req.user._id.toString()) {
+      if (
+        !userIsSpeaker &&
+        req.user.role !== 'ROLE_ADMIN' &&
+        thread.question.user._id.toString() === req.user._id.toString()
+      ) {
         myThreads.push(thread);
       }
 
