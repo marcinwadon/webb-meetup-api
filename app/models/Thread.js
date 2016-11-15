@@ -6,7 +6,8 @@ const ThreadSchema = new Schema({
   session: { type: Schema.Types.ObjectId, ref: 'Session' },
   question: { type: Schema.Types.ObjectId, ref: 'Message' },
   create_date: Date,
-  public: { type: Boolean, default: false }
+  public: { type: Boolean, default: false },
+  deleted: { type: Boolean, default: false }
 });
 
 ThreadSchema.set('toJSON', {

@@ -51,6 +51,7 @@ module.exports = function (app, passport) {
   threadsRouter
     .param('threadId', threads.load)
     .get('/:threadId', threads.list)
+    .delete('/:threadId', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), threads.delete)
     .get('/:threadId/message', messages.list)
     .post('/:threadId/message', auth.requiresLogin, messages.add);
   app.use('/api/thread', threadsRouter);

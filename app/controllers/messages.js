@@ -103,7 +103,7 @@ exports.add = async(function* (req, res) {
 });
 
 function userIsOwner(user, thread) {
-  return user._id.toString() === thread.question.user.toString();
+  return user._id.toString() === thread.question.user._id.toString();
 }
 
 const userIsSpeaker = async(function* (user, sessionId) {
