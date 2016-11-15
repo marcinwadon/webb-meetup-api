@@ -1,4 +1,76 @@
 [
-  { "_id": {"$oid":"507f1f77bcf86cd799439011"}, "name": "Breakfast", "description": "Description", "location": "L120", "timeStart": "9:00 am", "timeEnd": "9:30 am", "speakers": [{"$oid":"507f1f77bcf86cd799439011"},{"$oid":"507f1f77bcf86cd799439012"}] },
-  { "_id": {"$oid":"507f1f77bcf86cd799439012"}, "name": "Dinner", "description": "Description", "location": "L120", "timeStart": "10:00 am", "timeEnd": "10:30 am", "speakers": [{"$oid":"507f1f77bcf86cd799439012"}] }
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439011"},
+    "name": "EventSourcing i CQRS jako alternatywa dla CRUD",
+    "description": "Nowy projekt... oczywistym wyborem jest architektura systemu oparta na CRUD... a może by tak zastosować rozwiązanie, które jak bumerang powraca z przeszłości? Nie czekaj i daj się zabrać w podróż do alternatywnej rzeczywistości zdarzeń, w której poznasz inny (lepszy?) sposób zaprojektowania swojego systemu. Postaram się dowieść, że alternatywne nie znaczy gorsze.",
+    "location": "L120",
+    "timeStart": "17:00",
+    "timeEnd": "17:25",
+    "speakers":[
+      {"$oid":"507f1f77bcf86cd799439015"}
+    ]
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439012"},
+    "name": "WebGL - wprowadzenie w trzeci wymiar stron internetowych",
+    "description": "W ciągu ostatnich kilku lat możliwości tworzenia grafiki 3D w przeglądarkach internetowych dramatycznie wzrosły. Dzisiaj przeciętnej klasy komputer (i większość urządzeń mobilnych) wyposażony w powszechnie dostępne narzędzia opensource'owe mają większe możliwości niż stacje graficzne sprzed kilkunastu lat. Po krótkim teoretycznym wstępie do programowania grafiki 3D przyjrzymy się możliwościom jakie dają nam najnowsze technologie oraz dostępne biblioteki.",
+    "location": "L120",
+    "timeStart": "17:30",
+    "timeEnd": "17:55",
+    "speakers": [{"$oid":"507f1f77bcf86cd799439013"}]
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439013"},
+    "name": "Wprowadzenie do Blockchain",
+    "description": "Blockchain - buzzword świata fintech, a może technologia, która zmieni świat? Czy w blockchainie nikt nie wie, że jesteś lodówką i każdy może wgrać co tylko chce? Zaprezentowane zostaną podstawy działania na przykładzie przypisania i przesyłania żetonów.",
+    "location": "L120",
+    "timeStart": "18:00",
+    "timeEnd": "18:25",
+    "speakers": [{"$oid":"507f1f77bcf86cd799439013"}]
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439014"},
+    "name": "Przerwa kawowa",
+    "description": "",
+    "location": "",
+    "timeStart": "18:30",
+    "timeEnd": "19:00",
+    "speakers": []
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439015"},
+    "name": "Token Authentication in ASP.NET Core (JWT)",
+    "description": "Autentykacja poprzez token (JWT) staje się powoli standardem w nowoczesnych aplikacjach mobilnych oraz single page applications. Do jej zaimplementowania wystarczy zwykły serwer Web Api oraz JavaScript. Korzyści z zastosowania są znaczące: bezstanowość, łatwiejsza skalowalność oraz spójna identyfikacja. Podczas prezentacji zostanie przedstawiona implementacja JWT oraz autentykacja użytkowników na przykłądzie prostej aplikacji SPA z wykorzystaniem ASP.NET Core oraz Angular 2.",
+    "location": "L120",
+    "timeStart": "19:00",
+    "timeEnd": "19:25",
+    "speakers": [{"$oid": "507f1f77bcf86cd799439011"}, {"$oid": "507f1f77bcf86cd799439012"}]
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439016"},
+    "name": "Podejście funkcyjne w projektowaniu oprogramowania",
+    "description": "Podczas programowania bardzo ciężko jest przezwyciężyć pokusę umieszczania w różnych miejscach kodu nieczytelnych warunków, liczących \"coś\" pętli lub tymczasowych funkcji pomocniczych. Te fragmenty kodu mogą na początku wydawać się dobrym rozwiązaniem, jednak często po kilku dniach lub tygodniach nawet autor nie pamięta powodów takich decyzji. Wykorzystując podstawy programowania funkcyjnego można istotnie zwiększyć czytelność kodu oraz szansę na jego ponowne użycie w innym miejscu projektu.",
+    "location": "L120",
+    "timeStart": "19:30",
+    "timeEnd": "19:55",
+    "speakers": [{"$oid": "507f1f77bcf86cd799439016"}]
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439017"},
+    "name": "A Docker Story - from Desktop to Production",
+    "description": "Buddy to nowa platforma Git z narzędziem CI/CD do automatyzacji procesów developerskich (buildy i testy aplikacji, upload plików na serwer, odpalanie skryptów i wiele innych). Produkt w 100% polski stworzony z <3 przez 20-osobowy zespół z Bielska-Białej.",
+    "location": "L120",
+    "timeStart": "20:00",
+    "timeEnd": "20:25",
+    "speakers": [{"$oid": "507f1f77bcf86cd799439014"}]
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439018"},
+    "name": "Rozdanie nagród",
+    "description": "",
+    "location": "L120",
+    "timeStart": "20:30",
+    "timeEnd": "21:00",
+    "speakers": []
+  }
 ]

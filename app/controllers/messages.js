@@ -83,7 +83,7 @@ exports.add = async(function* (req, res) {
   message.thread = req.thread;
   message.text = req.body.text;
 
-  if (userIsSpeaker(req.user, req.thread)) {
+  if (yield userIsSpeaker(req.user, req.thread)) {
     req.thread.public = true;
 
     try {
@@ -103,7 +103,7 @@ exports.add = async(function* (req, res) {
 });
 
 function userIsOwner(user, thread) {
-  return user._id.toString() === thread.question.user.toString();
+  return user._id.toString() === thread.question.user._id.toString();
 }
 
 const userIsSpeaker = async(function* (user, sessionId) {
@@ -118,7 +118,7 @@ const userIsSpeaker = async(function* (user, sessionId) {
   }
 
   for (let speaker of session.speakers) {
-    if (user._id.toString() === speaker.user.toString()) {
+    if (user._id.toString() === speaker.user._id.toString()) {
       return true;
     }
   }
