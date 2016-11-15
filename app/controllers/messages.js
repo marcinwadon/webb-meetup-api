@@ -118,7 +118,6 @@ const userIsSpeaker = async(function* (user, sessionId) {
   }
 
   for (let speaker of session.speakers) {
-    console.log(speaker.user._id, user._id);
     if (user._id.toString() === speaker.user._id.toString()) {
       return true;
     }
