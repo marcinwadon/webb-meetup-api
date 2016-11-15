@@ -26,7 +26,7 @@
     "location": "L120",
     "timeStart": "18:00",
     "timeEnd": "18:25",
-    "speakers": [{"$oid":"507f1f77bcf86cd799439013"}]
+    "speakers": [{"$oid":"507f1f77bcf86cd799439017"}]
   },
   {
     "_id": {"$oid":"507f1f77bcf86cd799439014"},
