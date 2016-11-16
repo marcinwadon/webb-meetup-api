@@ -11,7 +11,7 @@ exports.load = async(function* (req, res, next) {
     return res.status(404).json({ error: 'Thread not found.' });
   }
 
-  const criteria = { _id, deleted: false, public: true };
+  const criteria = { _id, deleted: false };
 
   try {
     req.thread = yield Thread.load({ criteria });
