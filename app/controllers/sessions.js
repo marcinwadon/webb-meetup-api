@@ -30,8 +30,17 @@ exports.list = async(function* (req, res) {
 
   const sessions = yield Session
     .find()
-    .select()
-    .populate('speakers', 'name')
+    .select('name description location timeStart timeEnd speakers')
+    .populate({
+        path: 'speakers',
+        model: 'SpeakerDetail',
+        select: 'user bio www picture social_media',
+        populate: {
+          path: 'user',
+          model: 'User',
+          select: 'name email bio'
+        }
+      })
     .exec();
 
     res.json({ sessions });
