@@ -110,7 +110,16 @@ const userIsSpeaker = async(function* (user, sessionId) {
   const session = yield Session
     .findOne({ _id: sessionId })
     .select('speakers')
-    .populate('speakers', 'user')
+    .populate({
+      path: 'speakers',
+      model: 'SpeakerDetail',
+      select: 'user',
+      populate: {
+        path: 'user',
+        model: 'User',
+        select: 'name'
+      }
+    })
     .exec();
 
   if (!session) {
