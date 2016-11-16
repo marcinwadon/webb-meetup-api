@@ -1,6 +1,12 @@
 #!/bin/bash
 
-while true; do
+ASK=true
+
+if [ "$1" == "-f" ]; then
+  ASK=false
+fi
+
+while $ASK; do
   read -p "It will drop your database. Continue? [y/n] >" yn
   case $yn in
     [Yy]* ) break;;
