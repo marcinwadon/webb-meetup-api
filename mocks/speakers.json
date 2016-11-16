@@ -4,7 +4,7 @@
     "user": {"$oid":"507f1f77bcf86cd799439012"},
     "bio": "Współtwórca oprogramowania, które od lat z powodzeniem kontaktuje miliony klientów z usługodawcami za pomocą technologii WebRTC. Pasjonat nowych technologii zafascynowany możliwościami .NET Core.",
     "www": "",
-    "picture": "",
+    "picture": "/images/lukasz_krzywizna.jpg",
     "social_media": [{ "key": "fb", "url": "http://facebook.com/lukasz.krzywizna" }]
   },
   {
@@ -12,7 +12,7 @@
     "user": {"$oid":"507f1f77bcf86cd799439013"},
     "bio": "Współtwórca oprogramowania, które od lat z powodzeniem kontaktuje miliony klientów z usługodawcami za pomocą technologii WebRTC. Pasjonat nowych technologii zafascynowany możliwościami .NET Core.",
     "www": "",
-    "picture": "",
+    "picture": "/images/przemyslaw_grzywa.jpg",
     "social_media": [{ "key": "fb", "url": "http://facebook.com/przemek.grzywa" }]
   },
   {
@@ -20,7 +20,7 @@
     "user": {"$oid":"507f1f77bcf86cd799439014"},
     "bio": "Programista (i grafik) z dziesięcioletnim stażem. Kilka lat jako wykładowca i prowadzący kursy. Obecnie developer platformy GBOX w firmie Inelo.",
     "www": "",
-    "picture": "",
+    "picture": "/images/marek_mazur.jpg",
     "social_media": [{ "key": "goldenline", "url": "http://www.goldenline.pl/marek-mazur59/" }]
   },
   {
@@ -28,7 +28,7 @@
     "user": {"$oid":"507f1f77bcf86cd799439015"},
     "bio": "W branży IT od 10 lat, od 7 lat Project Manager aplikacji typu SaaS. Programista .NET i Selenium. Współtwórca Springloops (narzędzia dla web developerów), Chime (rejestracja czasu pracy online) i BamBam! (zarządzanie projekami IT). Obecnie CTO i Project Manager aplikacji Buddy (kontrola wersji i automatyzacja procesów dla developerów). Mistrz młyna w Scrumie, paladyn Gita, chorąży Kanbana. Prywatnie ojciec dwójki dzieci i urodzony napastnik.",
     "www": "https://buddy.works",
-    "picture": "",
+    "picture": "/images/rafal_sztwiorok.png",
     "social_media": [{ "key": "twitter", "url": "https://twitter.com/buddygit" }, { "key": "fb", "url": "https://www.facebook.com/gitbuddy" }]
   },
   {
@@ -36,7 +36,7 @@
     "user": {"$oid":"507f1f77bcf86cd799439016"},
     "bio": "Z programowaniem związany od 7 lat. Na co dzień pracuję jako Senior Java Developer/Architekt w firmie Ailleron. Współzałożyciel Bielsko-Biała JUG. Doświadczenie nabywałem w kraju jak i za granicą przy projektach zarówno małych jak i bardzo dużych. Pasjonat Microservices, BigData, EventSourcing, CQRS. Codziennie kieruję się zasadą \"Programming is an art\". Zwolennik \"Open-Source\" zarówno jeśli chodzi o oprogramowanie jak i wiedzę. Ostatnimi czasy mocno ukierunkowany na wystąpienia publiczne jak również prowadzenie szkoleń. Po godzinach miłośnik narciarstwa ekstremalnego.",
     "www": "",
-    "picture": "",
+    "picture": "/images/slawomir_jachowicz.jpg",
     "social_media": [{ "key": "twitter", "url": "https://twitter.com/jachowiczs" }]
   },
   {
@@ -44,7 +44,7 @@
     "user": {"$oid":"507f1f77bcf86cd799439017"},
     "bio": "Inżynier oprogramowania z prawie dziesięcioletnim doświadczeniem w branży. Pasjonat programowania funkcyjnego, autor kilku bibliotek open source. Uwielbia usuwać kod z projektów. Główne obszary zainteresowań to architektura oprogramowania, problemy algorytmiczne oraz analiza danych.",
     "www": "http://kowalczyk.cc",
-    "picture": "",
+    "picture": "/images/tomasz_kowalczyk.png",
     "social_media": [{ "key": "twitter", "url": "https://twitter.com/tmmx" }]
   },
   {
@@ -52,7 +52,7 @@
     "user": {"$oid":"507f1f77bcf86cd799439018"},
     "bio": "Programista PHP w Da Vinci Studio, główne zainteresowania to struktury rozproszone, kryptologia, sztuczna inteligencja. Ideologicznie związany z wolnym oprogramowaniem i kryptoanarchizmem.",
     "www": "http://maniora.net",
-    "picture": "",
+    "picture": "/images/pawel_maniora.jpg",
     "social_media": [{ "key": "fb", "url": "https://www.facebook.com/maniora" }, { "key": "linkedin", "url": "https://www.linkedin.com/in/pmaniora" }]
   }
 
