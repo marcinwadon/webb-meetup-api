@@ -38,7 +38,7 @@ ThreadSchema.statics = {
       .populate({
         path: 'question',
         model: 'Message',
-        select: 'text user',
+        select: 'text user create_date',
         populate: {
           path: 'user',
           model: 'User',
