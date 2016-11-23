@@ -67,12 +67,12 @@ exports.create = async(function* (req, res) {
   } catch (err) {
     res.status(500).json({});
   }
-  
+
   res.status(201).json();
 });
 
 exports.add = async(function* (req, res) {
-  if (!userIsOwner(req.user, req.thread) 
+  if (!userIsOwner(req.user, req.thread)
     && !(yield userIsSpeaker(req.user, req.thread.session))
   ) {
     return res.status(403).json();
@@ -83,7 +83,7 @@ exports.add = async(function* (req, res) {
   message.thread = req.thread;
   message.text = req.body.text;
 
-  if (yield userIsSpeaker(req.user, req.thread)) {
+  if (yield userIsSpeaker(req.user, req.thread.session)) {
     req.thread.public = true;
 
     try {
