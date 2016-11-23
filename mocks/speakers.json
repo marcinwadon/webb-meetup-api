@@ -29,7 +29,7 @@
     "bio": "W branży IT od 10 lat, od 7 lat Project Manager aplikacji typu SaaS. Programista .NET i Selenium. Współtwórca Springloops (narzędzia dla web developerów), Chime (rejestracja czasu pracy online) i BamBam! (zarządzanie projekami IT). Obecnie CTO i Project Manager aplikacji Buddy (kontrola wersji i automatyzacja procesów dla developerów). Mistrz młyna w Scrumie, paladyn Gita, chorąży Kanbana. Prywatnie ojciec dwójki dzieci i urodzony napastnik.",
     "www": "https://buddy.works",
     "picture": "/images/rafal-sztwiorok.png",
-    "social_media": [{ "key": "twitter", "url": "https://twitter.com/buddygit" }, { "key": "fb", "url": "https://www.facebook.com/gitbuddy" }]
+    "social_media": [{ "key": "twitter", "url": "https://twitter.com/sztwiorok" }, { "key": "linkedin", "url": "https://pl.linkedin.com/in/sztwiorok" }, { "key": "fb", "url": "https://www.facebook.com/gitbuddy" }]
   },
   {
     "_id": {"$oid":"507f1f77bcf86cd799439015"},

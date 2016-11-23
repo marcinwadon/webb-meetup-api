@@ -58,7 +58,7 @@
   {
     "_id": {"$oid":"507f1f77bcf86cd799439017"},
     "name": "A Docker Story - from Desktop to Production",
-    "description": "Buddy to nowa platforma Git z narzędziem CI/CD do automatyzacji procesów developerskich (buildy i testy aplikacji, upload plików na serwer, odpalanie skryptów i wiele innych). Produkt w 100% polski stworzony z <3 przez 20-osobowy zespół z Bielska-Białej.",
+    "description": "Docker i Docker Compose. Co to jest? CO daje? Co znaczy \"zdokeryzowana\" aplikacja? Jakie są przypadki użycia Dockera i jakie problemy rozwiązuje? Odpowiem na te pytania pokazując Demo -> developerka na Dekstop, wdrożenie i testy na Stage i release na serwer Produkcyjny.",
     "location": "L120",
     "timeStart": "20:00",
     "timeEnd": "20:25",
