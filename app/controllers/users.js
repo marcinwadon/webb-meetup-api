@@ -10,8 +10,8 @@ exports.load = async(function* (req, res, next, _id) {
   }
 
   const criteria = { _id };
-  
-  try {    
+
+  try {
     req.profile = yield User.load({ criteria });
 
     if (!req.profile) {
@@ -25,14 +25,14 @@ exports.load = async(function* (req, res, next, _id) {
 });
 
 exports.me = async(function* (req, res) {
-  res.json({ 
+  res.json({
     user: {
       id: req.user.id,
       name: req.user.name,
       email: req.user.email,
       role: req.user.role
-    } 
-  }); 
+    }
+  });
 });
 
 exports.list = async(function* (req, res) {
@@ -42,7 +42,7 @@ exports.list = async(function* (req, res) {
 
   const users = yield User
     .find()
-    .select('name')
+    .select()
     .exec();
 
   res.json({ users });
@@ -109,18 +109,36 @@ exports.changePassword = async(function* (req, res) {
   }
 
   req.user.password = req.body.password;
-  
+
   try {
     yield req.user.save();
   } catch (err) {
-    return res.status(500).json({ error: err });
+    return res.status(500).json({});
   }
 
   return res.status(204).json({});
 });
 
+exports.changeEmailOrPassword = async(function* (req, res) {
+  if (req.body.password) {
+    req.profile.password = req.body.password;
+  }
+
+  if (req.body.email) {
+    req.profile.email = req.body.email;
+  }
+
+  try {
+    yield req.profile.save();
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+
+  return res.status(200).json({});
+});
+
 function generateToken(user, req) {
-  return jwt.sign({ id: user._id.toString() }, req.app.get('jwtsecret'), { 
+  return jwt.sign({ id: user._id.toString() }, req.app.get('jwtsecret'), {
     expiresIn: 60*60*24
   });
 }

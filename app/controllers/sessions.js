@@ -45,3 +45,25 @@ exports.list = async(function* (req, res) {
 
     res.json({ sessions });
 });
+
+exports.change = async(function* (req, res) {
+  if (req.body.description) {
+    req.session.description = req.body.description;
+  }
+
+  if (req.body.timeStart) {
+    req.session.timeStart = req.body.timeStart;
+  }
+
+  if (req.body.timeEnd) {
+    req.session.timeEnd = req.body.timeEnd;
+  }
+
+  try {
+    yield req.session.save();
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+
+  return res.status(200).json({});
+});

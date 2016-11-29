@@ -22,12 +22,13 @@ module.exports = function (app, passport) {
     .post('/login', users.login);
   app.use('/api/auth', authRouter);
 
-  const userRouter = express.Router();  
+  const userRouter = express.Router();
   userRouter
     .param('userId', users.load)
     .get('/', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), users.list)
     .get('/me', auth.requiresLogin, users.me)
     .post('/changePassword', auth.requiresLogin, users.changePassword)
+    .patch('/:userId', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), users.changeEmailOrPassword)
     .get('/:userId', auth.requiresLogin, users.list)
   app.use('/api/user', userRouter);
 
@@ -44,7 +45,8 @@ module.exports = function (app, passport) {
     .get('/', sessions.list)
     .get('/:sessionId', sessions.list)
     .get('/:sessionId/thread', auth.couldLogin, threads.list)
-    .post('/:sessionId/message', auth.requiresLogin, messages.create);
+    .post('/:sessionId/message', auth.requiresLogin, messages.create)
+    .patch('/:sessionId', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), sessions.change);
   app.use('/api/session', sessionsRouter);
 
   const threadsRouter = express.Router();
