@@ -58,7 +58,7 @@ UserSchema
 UserSchema
 .path('hashed_password')
 .validate(function (hashed_password) {
-  return hashed_password.length && this._password.length;
+  return hashed_password.length && this._password && this._password.length;
 }, 'Hasło nie może być puste');
 
 UserSchema
@@ -70,7 +70,7 @@ UserSchema
   if (!this.password || !this.password.length) {
     return next(new Error('Invalid password'));
   }
-  
+
   next();
 });
 
