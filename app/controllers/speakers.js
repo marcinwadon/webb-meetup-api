@@ -36,3 +36,29 @@ exports.list = async(function* (req, res) {
 
     res.json({ speakers });
 });
+
+exports.change = async(function* (req,res) {
+  if (req.body.bio) {
+    req.speaker.bio = req.body.bio;
+  }
+
+  if (req.body.www) {
+    req.speaker.www = req.body.www;
+  }
+
+  if (req.body.picture) {
+    req.speaker.picture = req.body.picture;
+  }
+
+  if (req.body.social_media) {
+    req.speaker.social_media = req.body.social_media;
+  }
+
+  try {
+    yield req.speaker.save();
+  } catch (err) {
+    return res.status(500).json({ error: err });
+  }
+
+  return res.status(200).json({});
+});

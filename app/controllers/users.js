@@ -119,13 +119,21 @@ exports.changePassword = async(function* (req, res) {
   return res.status(204).json({});
 });
 
-exports.changeEmailOrPassword = async(function* (req, res) {
-  if (req.body.password) {
-    req.profile.password = req.body.password;
+exports.change = async(function* (req, res) {
+  if (req.body.name) {
+    req.profile.name = req.body.name;
   }
 
   if (req.body.email) {
     req.profile.email = req.body.email;
+  }
+
+  if (req.body.password) {
+    req.profile.password = req.body.password;
+  }
+
+  if (req.body.role) {
+    req.profile.role = req.body.role;
   }
 
   try {
