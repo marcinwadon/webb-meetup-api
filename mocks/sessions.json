@@ -48,8 +48,8 @@
   },
   {
     "_id": {"$oid":"507f1f77bcf86cd799439016"},
-    "name": "Podejście funkcyjne w projektowaniu oprogramowania",
-    "description": "Podczas programowania bardzo ciężko jest przezwyciężyć pokusę umieszczania w różnych miejscach kodu nieczytelnych warunków, liczących \"coś\" pętli lub tymczasowych funkcji pomocniczych. Te fragmenty kodu mogą na początku wydawać się dobrym rozwiązaniem, jednak często po kilku dniach lub tygodniach nawet autor nie pamięta powodów takich decyzji. Wykorzystując podstawy programowania funkcyjnego można istotnie zwiększyć czytelność kodu oraz szansę na jego ponowne użycie w innym miejscu projektu.",
+    "name": "Roboty stworzone z klocków LEGO",
+    "description": "Prelekcja zostanie sprowadzona do czeterech głównych punktów: nauka, nauka poprzez zabawę, zabawa poprzez naukę i zabawa.",
     "location": "L120",
     "timeStart": "19:30",
     "timeEnd": "19:55",
@@ -58,7 +58,7 @@
   {
     "_id": {"$oid":"507f1f77bcf86cd799439017"},
     "name": "A Docker Story - from Desktop to Production",
-    "description": "Docker i Docker Compose. Co to jest? CO daje? Co znaczy \"zdokeryzowana\" aplikacja? Jakie są przypadki użycia Dockera i jakie problemy rozwiązuje? Odpowiem na te pytania pokazując Demo -> developerka na Dekstop, wdrożenie i testy na Stage i release na serwer Produkcyjny.",
+    "description": "Docker i Docker Compose. Co to jest? Co daje? Co znaczy \"zdokeryzowana\" aplikacja? Jakie są przypadki użycia Dockera i jakie problemy rozwiązuje? Odpowiem na te pytania pokazując Demo -> developerka na Dekstop, wdrożenie i testy na Stage i release na serwer Produkcyjny.",
     "location": "L120",
     "timeStart": "20:00",
     "timeEnd": "20:25",

@@ -37,7 +37,7 @@
   },
   {
     "_id": {"$oid":"507f1f77bcf86cd799439015"},
-    "name": "Rafał Sztwiork",
+    "name": "Rafał Sztwiorok",
     "email": "speaker4@dvs.pl",
     "presentation": false,
     "role": "ROLE_SPEAKER",
@@ -55,7 +55,7 @@
   },
   {
     "_id": {"$oid":"507f1f77bcf86cd799439017"},
-    "name": "Tomasz Kowalczyk",
+    "name": "Michał Micor",
     "email": "speaker6@dvs.pl",
     "presentation": false,
     "role": "ROLE_SPEAKER",
@@ -79,5 +79,5 @@
     "role": "ROLE_USER",
     "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180",
     "salt": "777375890574"
-  }  
+  }
 ]

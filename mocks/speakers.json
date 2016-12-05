@@ -42,10 +42,10 @@
   {
     "_id": {"$oid":"507f1f77bcf86cd799439016"},
     "user": {"$oid":"507f1f77bcf86cd799439017"},
-    "bio": "Inżynier oprogramowania z prawie dziesięcioletnim doświadczeniem w branży. Pasjonat programowania funkcyjnego, autor kilku bibliotek open source. Uwielbia usuwać kod z projektów. Główne obszary zainteresowań to architektura oprogramowania, problemy algorytmiczne oraz analiza danych.",
-    "www": "http://kowalczyk.cc",
-    "picture": "/images/tomasz-kowalczyk.png",
-    "social_media": [{ "key": "twitter", "url": "https://twitter.com/tmmx" }]
+    "bio": "Od 4 lat prowadzi zajęcia z robotyki na klockach LEGO i stosuje w praktywce uczenie przez zabawę. Od niedawna prowadzi własną działalność i współpracuje między innymi z Kołem Informatycznym Reset ATH i Regionalnym Ośrodkiem Doskonalenia Nauczycieli WOM. Jego zainteresowania to modelarstwo i gry.",
+    "www": "",
+    "picture": "/images/michal-micor.png",
+    "social_media": []
   },
   {
     "_id": {"$oid":"507f1f77bcf86cd799439017"},

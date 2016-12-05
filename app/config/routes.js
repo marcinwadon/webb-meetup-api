@@ -28,7 +28,7 @@ module.exports = function (app, passport) {
     .get('/', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), users.list)
     .get('/me', auth.requiresLogin, users.me)
     .post('/changePassword', auth.requiresLogin, users.changePassword)
-    .patch('/:userId', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), users.changeEmailOrPassword)
+    .patch('/:userId', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), users.change)
     .get('/:userId', auth.requiresLogin, users.list)
   app.use('/api/user', userRouter);
 
@@ -36,7 +36,8 @@ module.exports = function (app, passport) {
   speakerRouter
     .param('speakerId', speakers.load)
     .get('/', speakers.list)
-    .get('/:speakerId', speakers.list);
+    .get('/:speakerId', speakers.list)
+    .patch('/:speakerId', auth.requiresLogin, auth.requiresRole(['ROLE_ADMIN']), speakers.change);
   app.use('/api/speaker', speakerRouter);
 
   const sessionsRouter = express.Router();

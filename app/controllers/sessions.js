@@ -47,6 +47,10 @@ exports.list = async(function* (req, res) {
 });
 
 exports.change = async(function* (req, res) {
+  if (req.body.name) {
+    req.session.name = req.body.name;
+  }
+
   if (req.body.description) {
     req.session.description = req.body.description;
   }
@@ -57,6 +61,10 @@ exports.change = async(function* (req, res) {
 
   if (req.body.timeEnd) {
     req.session.timeEnd = req.body.timeEnd;
+  }
+
+  if (req.body.location) {
+    req.session.location = req.body.location;
   }
 
   try {
