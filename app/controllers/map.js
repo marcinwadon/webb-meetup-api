@@ -5,7 +5,6 @@ const MapPoint = mongoose.model('MapPoint');
 
 exports.list = async(function* (req, res) {
   const mapPoints = yield MapPoint.find();
-  
   res.json({ mapPoints });
 });
 
