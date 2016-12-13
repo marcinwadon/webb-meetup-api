@@ -1,0 +1,59 @@
+[
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439011"},
+    "user": {"$oid":"507f1f77bcf86cd799439012"},
+    "bio": "Współtwórca oprogramowania, które od lat z powodzeniem kontaktuje miliony klientów z usługodawcami za pomocą technologii WebRTC. Pasjonat nowych technologii zafascynowany możliwościami .NET Core.",
+    "www": "",
+    "picture": "/images/lukasz-krzywizna.png",
+    "social_media": [{ "key": "fb", "url": "http://facebook.com/lukasz.krzywizna" }]
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439012"},
+    "user": {"$oid":"507f1f77bcf86cd799439013"},
+    "bio": "Współtwórca oprogramowania, które od lat z powodzeniem kontaktuje miliony klientów z usługodawcami za pomocą technologii WebRTC. Pasjonat nowych technologii zafascynowany możliwościami .NET Core.",
+    "www": "",
+    "picture": "/images/przemyslaw-grzywa.png",
+    "social_media": [{ "key": "fb", "url": "http://facebook.com/przemek.grzywa" }]
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439013"},
+    "user": {"$oid":"507f1f77bcf86cd799439014"},
+    "bio": "Programista (i grafik) z dziesięcioletnim stażem. Kilka lat jako wykładowca i prowadzący kursy. Obecnie developer platformy GBOX w firmie Inelo.",
+    "www": "",
+    "picture": "/images/marek-mazur.png",
+    "social_media": [{ "key": "goldenline", "url": "http://www.goldenline.pl/marek-mazur59/" }]
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439014"},
+    "user": {"$oid":"507f1f77bcf86cd799439015"},
+    "bio": "W branży IT od 10 lat, od 7 lat Project Manager aplikacji typu SaaS. Programista .NET i Selenium. Współtwórca Springloops (narzędzia dla web developerów), Chime (rejestracja czasu pracy online) i BamBam! (zarządzanie projekami IT). Obecnie CTO i Project Manager aplikacji Buddy (kontrola wersji i automatyzacja procesów dla developerów). Mistrz młyna w Scrumie, paladyn Gita, chorąży Kanbana. Prywatnie ojciec dwójki dzieci i urodzony napastnik.",
+    "www": "https://buddy.works",
+    "picture": "/images/rafal-sztwiorok.png",
+    "social_media": [{ "key": "twitter", "url": "https://twitter.com/sztwiorok" }, { "key": "linkedin", "url": "https://pl.linkedin.com/in/sztwiorok" }, { "key": "fb", "url": "https://www.facebook.com/gitbuddy" }]
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439015"},
+    "user": {"$oid":"507f1f77bcf86cd799439016"},
+    "bio": "Z programowaniem związany od 7 lat. Na co dzień pracuję jako Senior Java Developer/Architekt w firmie Ailleron. Współzałożyciel Bielsko-Biała JUG. Doświadczenie nabywałem w kraju jak i za granicą przy projektach zarówno małych jak i bardzo dużych. Pasjonat Microservices, BigData, EventSourcing, CQRS. Codziennie kieruję się zasadą \"Programming is an art\". Zwolennik \"Open-Source\" zarówno jeśli chodzi o oprogramowanie jak i wiedzę. Ostatnimi czasy mocno ukierunkowany na wystąpienia publiczne jak również prowadzenie szkoleń. Po godzinach miłośnik narciarstwa ekstremalnego.",
+    "www": "",
+    "picture": "/images/slawomir-jachowicz.png",
+    "social_media": [{ "key": "twitter", "url": "https://twitter.com/jachowiczs" }]
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439016"},
+    "user": {"$oid":"507f1f77bcf86cd799439017"},
+    "bio": "Od 4 lat prowadzi zajęcia z robotyki na klockach LEGO i stosuje w praktywce uczenie przez zabawę. Od niedawna prowadzi własną działalność i współpracuje między innymi z Kołem Informatycznym Reset ATH i Regionalnym Ośrodkiem Doskonalenia Nauczycieli WOM. Jego zainteresowania to modelarstwo i gry.",
+    "www": "",
+    "picture": "/images/michal-micor.jpg",
+    "social_media": []
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439017"},
+    "user": {"$oid":"507f1f77bcf86cd799439018"},
+    "bio": "Programista PHP w Da Vinci Studio, główne zainteresowania to struktury rozproszone, kryptologia, sztuczna inteligencja. Ideologicznie związany z wolnym oprogramowaniem i kryptoanarchizmem.",
+    "www": "http://maniora.net",
+    "picture": "/images/pawel-maniora.png",
+    "social_media": [{ "key": "fb", "url": "https://www.facebook.com/maniora" }, { "key": "linkedin", "url": "https://www.linkedin.com/in/pmaniora" }]
+  }
+
+]

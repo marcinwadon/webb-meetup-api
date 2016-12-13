@@ -1,0 +1,83 @@
+[
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439011"},
+    "name": "Admin",
+    "email": "admin@dvs.pl",
+    "presentation": false,
+    "role": "ROLE_ADMIN",
+    "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180",
+    "salt": "777375890574"
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439012"},
+    "name": "Łukasz Krzywizna",
+    "email": "speaker1@dvs.pl",
+    "presentation": false,
+    "role": "ROLE_SPEAKER",
+    "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180",
+    "salt": "777375890574"
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439013"},
+    "name": "Przemysław Grzywa",
+    "email": "speaker2@dvs.pl",
+    "presentation": false,
+    "role": "ROLE_SPEAKER",
+    "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180",
+    "salt": "777375890574"
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439014"},
+    "name": "Marek Mazur",
+    "email": "speaker3@dvs.pl",
+    "presentation": false,
+    "role": "ROLE_SPEAKER",
+    "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180",
+    "salt": "777375890574"
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439015"},
+    "name": "Rafał Sztwiorok",
+    "email": "speaker4@dvs.pl",
+    "presentation": false,
+    "role": "ROLE_SPEAKER",
+    "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180",
+    "salt": "777375890574"
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439016"},
+    "name": "Sławomir Jachowicz",
+    "email": "speaker5@dvs.pl",
+    "presentation": false,
+    "role": "ROLE_SPEAKER",
+    "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180",
+    "salt": "777375890574"
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439017"},
+    "name": "Michał Micor",
+    "email": "speaker6@dvs.pl",
+    "presentation": false,
+    "role": "ROLE_SPEAKER",
+    "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180",
+    "salt": "777375890574"
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439018"},
+    "name": "Paweł Maniora",
+    "email": "speaker7@dvs.pl",
+    "presentation": false,
+    "role": "ROLE_SPEAKER",
+    "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180",
+    "salt": "777375890574"
+  },
+  {
+    "_id": {"$oid":"507f1f77bcf86cd799439019"},
+    "name": "User",
+    "email": "user@dvs.pl",
+    "presentation": false,
+    "role": "ROLE_USER",
+    "hashed_password": "e1029484881937c7ee7db0c85543f99663b2f180",
+    "salt": "777375890574"
+  }
+]
